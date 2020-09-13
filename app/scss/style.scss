@@ -78,13 +78,13 @@
   &-title {
     font-size: 48px;
     line-height: 72px;
-    font-weight: 700;
+    @include f700;
     margin-bottom: 10px;
   }
   &-text {
     font-size: 20px;
     line-height: 30px;
-    font-weight: 500;
+    @include f500;
     margin-bottom: 50px;
   }
   &-form {
@@ -99,7 +99,7 @@
       height: 56px;
       border: none;
       font-size: 14px;
-      font-weight: 500;
+      @include f500;
       padding-left: 25px;
       padding-right: 60px;
       &::placeholder {
@@ -168,7 +168,7 @@
     padding: 10px 30px;
     align-items: center;
     min-height: 90px;
-    font-weight: 500;
+    @include f500;
     border-bottom: 1px solid #e7ecf2;
     background-color: #fff;
   }
@@ -188,7 +188,7 @@
   &-price {
     font-size: 20px;
     color: $bg;
-    font-weight: 700;
+    @include f700;
   }
   &-info {
     display: flex;
@@ -214,7 +214,7 @@
     }
     span {
       font-size: 14px;
-      font-weight: 500;
+      @include f500;
     }
   }
   &-star {
@@ -276,3 +276,67 @@
 }
 
 //end product-slider
+
+//start adv
+
+.advantages {
+  background: $bg;
+  padding: 100px 0;
+}
+
+.advantages__title {
+  color: #fff;
+}
+
+.advantages__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.advantages__item {
+  max-width: 370px;
+  text-align: center;
+  padding: 0 15px;
+
+  &:hover {
+    .advantages__item-images {
+      background-color: $green;
+      transition: all 0.3s;
+    }
+    .advantages__item-title {
+      color: $green;
+      transition: all 0.3s;
+    }
+    .advantages__item-images {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+  &-images {
+    width: 114px;
+    height: 114px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+  }
+  &-title {
+    margin-bottom: 25px;
+    color: #fff;
+    font-size: 24px;
+    @include f500;
+  }
+  &-text {
+    font-size: 15px;
+  }
+}
+
+.svg-icon {
+  width: 60px;
+  height: 60px;
+}
+
+//end adv
