@@ -1498,6 +1498,11 @@
     color: #70838d;
     padding: 20px 0;
     cursor: pointer;
+    &.active {
+      color: $bg;
+      @include f700;
+      border-bottom: 3px solid $green;
+    }
     & + .tab {
       border-left: 1px solid #d7d7d7;
     }
@@ -1582,6 +1587,47 @@
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+  .jq-selectbox__dropdown {
+    margin-top: -1px;
+    padding: 0;
+    border: 1px solid #d7d7d7;
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 13px;
+    color: #70838d;
+  }
+  .jq-selectbox__select {
+    height: 26px;
+    line-height: 26px;
+    width: 80px;
+    padding: 0 7px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: none;
+    border-radius: 0px;
+    background: #fff;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    color: #70838d;
+    font-size: 13px;
+    text-shadow: none;
+    position: relative;
+    .jq-selectbox__trigger {
+      border-left: none;
+    }
+    .jq-selectbox__trigger-arrow {
+      border: none;
+      &::before {
+        position: absolute;
+        content: "\f0d7";
+        font-family: "icomoon";
+        color: $green;
+        font-size: 13px;
+        top: -13px;
+        right: -5px;
+      }
+    }
+  }
 }
 .price__product {
   font-size: 22px;
@@ -1980,17 +2026,17 @@
     width: 100%;
     padding: 0;
     border: none;
-    position: relative;
-    .settings_btn {
+    button {
       background-color: $green;
       color: #fff;
       font-size: 15px;
       @include f500;
-      width: 110px;
+      padding: 0 35px;
       height: 45px;
+      line-height: 45px;
       border: none;
-      position: absolute;
-      left: 295px;
+      margin-left: 259px;
+      cursor: pointer;
     }
   }
 }
@@ -2017,6 +2063,49 @@
   margin-bottom: 21px;
   display: flex;
   align-items: center;
+  .jq-selectbox.jqselect {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 540px;
+    .jq-selectbox__select {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 10px;
+      border: 1px solid #dedede;
+      border-bottom-color: none;
+      border-radius: 0px;
+      background: #f9f9f9;
+      box-shadow: none;
+      font-family: "Roboto-Regular", sans-serif;
+      color: #707070;
+      text-shadow: none;
+      font-size: 14px;
+    }
+    .jq-selectbox__dropdown {
+      border: 1px solid #dedede;
+      margin-top: -1px;
+      border-radius: 0px;
+      background: #fff;
+      box-shadow: none;
+      font-family: "Roboto-Regular", sans-serif;
+    }
+    .jq-selectbox__trigger-arrow {
+      border: none;
+      &::before {
+        position: absolute;
+        content: "\f0d7";
+        font-family: "icomoon";
+        color: #444;
+        font-size: 15px;
+        right: 15px;
+        top: -14px;
+      }
+    }
+    .jq-selectbox__trigger {
+      border-left: none;
+    }
+  }
 
   label {
     color: #444;
@@ -2248,5 +2337,156 @@
 }
 
 // end profile page
+
+//start upload page
+
+.upload__inner {
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+  margin-bottom: 110px;
+  button {
+    color: #fff;
+    background-color: $green;
+    border: none;
+    padding: 15px 36px;
+    @include f500;
+    margin-left: 175px;
+    cursor: pointer;
+  }
+}
+
+.upload__inner-title {
+  font-size: 24px;
+  @include f500;
+  padding: 16px 35px 18px;
+  color: $bg;
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 40px;
+}
+
+.upload__inner-content {
+  margin-bottom: 30px;
+  padding-left: 45px;
+  padding-right: 50px;
+}
+
+.upload-line {
+  margin-bottom: 25px;
+  display: flex;
+  label {
+    min-width: 175px;
+    padding-right: 15px;
+    padding-top: 5px;
+    font-size: 15px;
+    color: #444;
+    &::placeholder {
+      color: #707070;
+    }
+    span {
+      color: $green;
+      font-size: 24px;
+    }
+  }
+  select,
+  input,
+  textarea {
+    width: 100%;
+    display: block;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0 18px;
+  }
+  input [type="file"] {
+    outline: none;
+  }
+  textarea {
+    padding: 8px 18px;
+    resize: none;
+    height: 150px;
+  }
+  .jq-file__browse {
+    top: 6px;
+    right: auto;
+    left: 9px;
+    padding: 0px 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0px;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+    line-height: 26px;
+    height: 26px;
+    font-size: 12px;
+    color: #444;
+    cursor: pointer;
+  }
+  .jq-file {
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+  }
+  .jq-file__name {
+    margin-left: 100px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0px 18px;
+    border: none;
+    border-bottom-color: transparent;
+    border-radius: 0px;
+    background: transparent;
+    box-shadow: none;
+    font-size: 12px;
+    color: #707070;
+    line-height: 40px;
+  }
+
+  .jq-selectbox {
+    width: 100%;
+  }
+  .jq-selectbox__select {
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    color: #707070;
+    text-shadow: none;
+    line-height: 40px;
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+    line-height: 40px;
+    top: 0;
+    right: 20px;
+    font-size: 15px;
+    &::before {
+      content: "\f0d7";
+      font-family: "icomoon";
+    }
+  }
+  .jq-selectbox__dropdown {
+    border: 1px solid #d7d7d7;
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    top: 37px;
+  }
+  .jq-selectbox li {
+    padding: 5px 18px 6px;
+  }
+  .jq-selectbox__trigger {
+    border-left: none;
+  }
+}
+
+//end upload page
 
 @import "media";
