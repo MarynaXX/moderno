@@ -532,6 +532,12 @@
   background-color: $grey;
 }
 
+.product__wrapper,
+.product-slider__wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .product__inner-btn {
   text-align: center;
   margin-bottom: 60px;
@@ -554,15 +560,21 @@
 
 .product__inner-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  margin-left: -30px;
 }
 
+.product .product__item {
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
+}
 .product__item {
   max-width: 442px;
   width: 100%;
   box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
   margin-bottom: 30px;
+
   &-img {
     min-height: 250px;
     background-repeat: no-repeat;
@@ -1218,7 +1230,9 @@
 .product-page__content {
   width: 100%;
   .product__item {
-    max-width: 270px;
+    flex-basis: calc(33.333% - 30px);
+    margin-left: 30px;
+    // max-width: 270px;
     background-color: #fff;
     transition: all 0.5s;
   }
@@ -1246,9 +1260,10 @@
 .product-page__items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  margin-left: -30px;
 }
 
 .pagination__list {
@@ -1323,6 +1338,7 @@
 .product-page__content .product__item {
   &.list {
     max-width: 100%;
+    flex-basis: 100%;
     .product__item-img {
       width: 240px;
       float: left;
@@ -1384,7 +1400,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  padding: 16px;
 }
 
 .product-one__images {
@@ -1420,10 +1436,11 @@
 }
 
 .product-one__link {
+  margin-bottom: 8px;
   a {
     width: 157px;
     text-align: center;
-    padding: 14px 8px;
+    padding: 12px 8px 13px 8px;
     background-color: $green;
     color: $grey;
     font-size: 16px;
@@ -1798,6 +1815,7 @@
   color: #fff;
   font-weight: 800;
   padding-top: 90px;
+  padding-right: 150px;
   padding-bottom: 20px;
   line-height: 300px;
   position: relative;
@@ -1805,23 +1823,24 @@
     content: "";
     position: absolute;
     background-image: url(../images/404.png);
-    width: 150px;
-    height: 292px;
+    width: 160px;
+    height: 301px;
     margin-left: 15px;
   }
 }
 
 .page-404__title {
   font-size: 30px;
+  line-height: 45px;
   @include f300;
-  padding-bottom: 30px;
+  padding: 0 10px 30px;
 }
 
 .page-404__text {
   font-size: 18px;
   line-height: 24px;
   @include f300;
-  padding-bottom: 55px;
+  padding: 0 10px 55px;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -1868,7 +1887,7 @@
 }
 
 .contact__inner {
-  padding: 35px 40px 15px;
+  padding: 35px 40px 35px;
 }
 
 .contact__map {
@@ -2026,7 +2045,9 @@
     width: 100%;
     padding: 0;
     border: none;
+    position: relative;
     button {
+      position: absolute;
       background-color: $green;
       color: #fff;
       font-size: 15px;
@@ -2109,7 +2130,7 @@
 
   label {
     color: #444;
-    width: 260px;
+    min-width: 260px;
   }
   input {
     max-width: 540px;
@@ -2203,7 +2224,7 @@
     content: "\f003";
     font-family: "icomoon";
     left: 50px;
-    top: 18px;
+    top: 15px;
   }
 }
 
